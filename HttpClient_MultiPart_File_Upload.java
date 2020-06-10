@@ -12,15 +12,15 @@ import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 
 public class HttpClient_MultiPart_File_Upload {
 	
 	public void uploadFile() throws IOException{
 		
-		String urlToken = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=0d1a6f456192e47eb48abb06c25ce0eee3030ed0";
-		File uploadJSON = new File("C:\\Users\tuane\\eclipse-workspace\\cifradecesar\\answer.json");
+		String urlToken = "https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=0d1a6f456192e47eb48abb06c25ce0eee3030ed0";
+		File uploadJSON = new File("C:\\Users\\tuane\\eclipse-workspace\\cifradecesar\\answer.json");
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		
 		HttpEntity postData = MultipartEntityBuilder.create().addBinaryBody("upfile", uploadJSON).build();
@@ -42,10 +42,14 @@ public class HttpClient_MultiPart_File_Upload {
 		while ((line = br.readLine()) != null) {
 			result.append(line);
 		}
-		
 		System.out.println("Response: \n" + result);
 	}
 	
+	public static void main(String[] args) throws IOException {
+		HttpClient_MultiPart_File_Upload a = new HttpClient_MultiPart_File_Upload();
+		a.uploadFile();
+	
+	}
 }
 
 
