@@ -46,6 +46,23 @@ public class Criptografia {
 		return sha1;
 	}
 	
+	
+	
+	
+	public static String getCifrado() {
+		return cifrado;
+	}
+	public static void setCifrado(String cifrado) {
+		Criptografia.cifrado = cifrado;
+	}
+	public static int getNumero_casas() {
+		return numero_casas;
+	}
+	
+	
+	public static void setNumero_casas(int numero_casas) {
+		Criptografia.numero_casas = numero_casas;
+	}
 	public static void main(String[] args) {
 		Criptografia c = new Criptografia();
 		String decifrar = c.decifrar(cifrado, numero_casas);
